@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<title>BrauBeast Test</title>
+
+</html>
+
+<body>
+
+    <script>
+        (() => {
+            const resizer = document.createElement('script')
+            resizer.src = 'https://cdn.jsdelivr.net/npm/iframe-resizer@4.2.11/js/iframeResizer.min.js'
+            document.body.appendChild(resizer)
+            resizer.addEventListener('load', function () {
+                const iframe = document.createElement('iframe')
+                iframe.id = 'crowdsmart-embed-app'
+                iframe.src = 'https://www.crowdsmartstage.ai/embed/evaluation/csinnovate/eb163fb6-700a-11eb-b015-0ad589fedacf/ee9bff20-700c-11eb-93d5-0ad589fedacf'
+                document.body.appendChild(iframe)
+                iframe.addEventListener('load', function () {
+                    iFrameResize({}, '#crowdsmart-embed-app')
+                })
+            })
+        })()
+    </script>
+    <style>
+        #crowdsmart-embed-app {
+            background: transparent;
+            border: none;
+            bottom: 0;
+            max-height: 100vh;
+            position: fixed;
+            right: 0;
+            width: 420px;
+        }
+    </style>
+
+</body>
