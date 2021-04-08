@@ -14,5 +14,12 @@
             id="crowdsmart-embed-script"
             data-embed-url="https://www.localhost.com:8443/embed/evaluation/cybercorp/e1281884-a9a5-11ea-845b-0ae63bf3e830/feab37ea-ab2d-11ea-8903-0ae63bf3e830">
         </script>
+        <script>
+            window.addEventListener('message', (event) => {
+                if (event.data === 'SUPPLY_TOKEN') {
+                    if (window.frames.crowdsmart) window.frames.crowdsmart.postMessage({ token: 'YOUR_TOKEN' }, 'https://www.localhost.com:8443')
+                }
+            })
+        </script>
     </body>
 </html>
