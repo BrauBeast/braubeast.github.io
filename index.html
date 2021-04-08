@@ -1,40 +1,18 @@
 <!DOCTYPE html>
 <html>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>BrauBeast Test</title>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <title>BrauBeast Test</title>
+    </head>
+    <body>
+        <link href="https://www.localhost.com:8443/css/embedStyle.css" rel="stylesheet" type="text/css">
+        <script
+            src="https://www.localhost.com:8443/js/embedScript.js"
+            id="crowdsmart-embed-script"
+            data-embed-url="https://www.localhost.com:8443/embed/evaluation/cybercorp/e1281884-a9a5-11ea-845b-0ae63bf3e830/feab37ea-ab2d-11ea-8903-0ae63bf3e830">
+        </script>
+    </body>
 </html>
-
-<body>
-
-    <script>
-        (() => {
-            const resizer = document.createElement('script')
-            resizer.src = 'https://cdn.jsdelivr.net/npm/iframe-resizer@4.2.11/js/iframeResizer.min.js'
-            document.body.appendChild(resizer)
-            resizer.addEventListener('load', function () {
-                const iframe = document.createElement('iframe')
-                iframe.id = 'crowdsmart-embed-app'
-                iframe.src = 'https://www.crowdsmartstage.ai/embed/evaluation/csinnovate/eb163fb6-700a-11eb-b015-0ad589fedacf/ee9bff20-700c-11eb-93d5-0ad589fedacf'
-                document.body.appendChild(iframe)
-                iframe.addEventListener('load', function () {
-                    iFrameResize({}, '#crowdsmart-embed-app')
-                })
-            })
-        })()
-    </script>
-    <style>
-        #crowdsmart-embed-app {
-            background: transparent;
-            border: none;
-            bottom: 0;
-            max-height: 100vh;
-            position: fixed;
-            right: 0;
-            width: 420px;
-        }
-    </style>
-
-</body>
