@@ -32,18 +32,18 @@
         </script>
         <script>
             window.addEventListener('message', (event) => {
-                const CS_MESSAGE_TAG = '[CrowdSmart]'
                 if (event.data === 'SUPPLY_TOKEN') {
                     if (window.frames.crowdsmart) window.frames.crowdsmart.postMessage({ token: 'TEST_TOKEN_1' }, 'https://www.localhost.com:8443')
                 }
                 if (event.data === 'SUPPLY_CONFIG') {
                     const config = {
+                        crowdsmart: true,
                         font: {
                             href: 'https://braubeast.github.io/css/fonts.css',
                             family: '\'Josefin Sans\', sans-serif;'
                         }
                     }
-                    if (window.frames.crowdsmart) window.frames.crowdsmart.postMessage(`${CS_MESSAGE_TAG}${JSON.stringify(config)}`, 'https://www.localhost.com:8443')
+                    if (window.frames.crowdsmart) window.frames.crowdsmart.postMessage(config, 'https://www.localhost.com:8443')
                 }
             })
         </script>
