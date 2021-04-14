@@ -14,6 +14,18 @@
                 font-family: 'Josefin Sans', sans-serif;
             }
         </style>
+        <script>
+            window.CROWDSMART_EMBED_CONFIG = {
+                crowdsmart: true,
+                font: {
+                    href: 'https://braubeast.github.io/css/fonts.css',
+                    family: '"Josefin Sans", sans-serif'
+                }
+            }
+            window.CROWDSMART_TOKEN_USER = {
+                token: 'TEST_TOKEN_1'
+            }
+        </script>
     </head>
     <body>
         <h1>Embed Test Page</h1>
@@ -29,40 +41,6 @@
             id="crowdsmart-embed-script"
             data-embed-url="https://www.localhost.com:8443/embed/evaluation/cybercorp/b32fadce-9ca8-11eb-b11a-0ad589fedacf/e2a09172-9ca8-11eb-b706-0ad589fedacf"
             data-custom-font-url="https://braubeast.github.io/css/fonts.css">
-        </script>
-        <script>
-            window.addEventListener('message', (event) => {
-                let message
-                /* if (event.data === 'SUPPLY_TOKEN') {
-                    if (window.frames.crowdsmart) window.frames.crowdsmart.postMessage({ token: 'TEST_TOKEN_1' }, 'https://www.localhost.com:8443')
-                }
-                if (event.data === 'SUPPLY_CONFIG') {
-                    const config = {
-                        crowdsmart: true,
-                        font: {
-                            href: 'https://braubeast.github.io/css/fonts.css',
-                            family: '"Josefin Sans", sans-serif'
-                        }
-                    }
-                    if (window.frames.crowdsmart) window.frames.crowdsmart.postMessage(config, 'https://www.localhost.com:8443')
-                } */
-                switch (event.data) {
-                    case 'SUPPLY_TOKEN':
-                        message = { token: 'TEST_TOKEN_1' }
-                        break;
-                    case 'SUPPLY_CONFIG':
-                        message = {
-                            crowdsmart: true,
-                            font: {
-                                href: 'https://braubeast.github.io/css/fonts.css',
-                                family: '"Josefin Sans", sans-serif'
-                            }
-                        }
-                    default:
-                        break;
-                }
-                if (message && window.frames.crowdsmart) window.frames.crowdsmart.postMessage(message, 'https://www.localhost.com:8443')
-            })
         </script>
         <!-- Dev End -->
 
