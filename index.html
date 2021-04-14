@@ -32,7 +32,8 @@
         </script>
         <script>
             window.addEventListener('message', (event) => {
-                if (event.data === 'SUPPLY_TOKEN') {
+                let message
+                /* if (event.data === 'SUPPLY_TOKEN') {
                     if (window.frames.crowdsmart) window.frames.crowdsmart.postMessage({ token: 'TEST_TOKEN_1' }, 'https://www.localhost.com:8443')
                 }
                 if (event.data === 'SUPPLY_CONFIG') {
@@ -44,7 +45,23 @@
                         }
                     }
                     if (window.frames.crowdsmart) window.frames.crowdsmart.postMessage(config, 'https://www.localhost.com:8443')
+                } */
+                switch (event.data) {
+                    case 'SUPPLY_TOKEN':
+                        message = { token: 'TEST_TOKEN_1' }
+                        break;
+                    case 'SUPPLY_CONFIG':
+                        message = {
+                            crowdsmart: true,
+                            font: {
+                                href: 'https://braubeast.github.io/css/fonts.css',
+                                family: '"Josefin Sans", sans-serif'
+                            }
+                        }
+                    default:
+                        break;
                 }
+                if (message && window.frames.crowdsmart) window.frames.crowdsmart.postMessage(message, 'https://www.localhost.com:8443')
             })
         </script>
         <!-- Dev End -->
