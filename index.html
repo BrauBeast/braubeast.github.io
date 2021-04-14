@@ -27,12 +27,21 @@
         <script
             src="https://www.localhost.com:8443/js/embedScript.js"
             id="crowdsmart-embed-script"
-            data-embed-url="https://www.localhost.com:8443/embed/evaluation/cybercorp/b32fadce-9ca8-11eb-b11a-0ad589fedacf/e2a09172-9ca8-11eb-b706-0ad589fedacf">
+            data-embed-url="https://www.localhost.com:8443/embed/evaluation/cybercorp/b32fadce-9ca8-11eb-b11a-0ad589fedacf/e2a09172-9ca8-11eb-b706-0ad589fedacf"
+            data-custom-font-url="https://braubeast.github.io/css/fonts.css">
         </script>
         <script>
             window.addEventListener('message', (event) => {
                 if (event.data === 'SUPPLY_TOKEN') {
                     if (window.frames.crowdsmart) window.frames.crowdsmart.postMessage({ token: 'TEST_TOKEN_1' }, 'https://www.localhost.com:8443')
+                }
+                if (event.data === 'SUPPLY_CONFIG') {
+                    if (window.frames.crowdsmart) window.frames.crowdsmart.postMessage({
+                        font: {
+                            href: 'https://braubeast.github.io/css/fonts.css',
+                            family: '\'Josefin Sans\', sans-serif;'
+                        }
+                    }, 'https://www.localhost.com:8443')
                 }
             })
         </script>
